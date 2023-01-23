@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:carcity/styles/styles.dart';
 
 class SmallBox extends StatelessWidget {
   const SmallBox({required this.tex1, required this.tex2, required this.tex3});
@@ -23,7 +24,7 @@ class SmallBox extends StatelessWidget {
             margin: EdgeInsets.only(right: 45, top: 12),
             height: 30,
             width: 30,
-            color: Color.fromRGBO(175, 200, 60, 1),
+            color: AppColor.teritaryColor,
             child: Icon(Icons.timer),
           ),
           Padding(
@@ -32,7 +33,7 @@ class SmallBox extends StatelessWidget {
               tex1,
               style: TextStyle(
                 fontSize: 13,
-                color: Color.fromARGB(255, 160, 159, 159),
+                color: TextColor.secondaryColor,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -46,7 +47,7 @@ class SmallBox extends StatelessWidget {
                     tex2,
                     style: TextStyle(
                       fontSize: 23,
-                      color: Color.fromARGB(255, 255, 255, 255),
+                      color: TextColor.secondaryColor,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -57,7 +58,7 @@ class SmallBox extends StatelessWidget {
                     tex3,
                     style: TextStyle(
                       fontSize: 12,
-                      color: Color.fromARGB(255, 255, 255, 255),
+                      color: TextColor.secondaryColor,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
