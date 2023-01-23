@@ -38,21 +38,18 @@ class SecondApp extends StatelessWidget {
                 height: MediaQuery.of(context).size.height / 2,
                 decoration: BoxDecoration(
                   color: AppColor.primaryColor,
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(20),
-                      topRight: Radius.circular(20)),
+                  borderRadius: BoxBorders.primaryBoxBorders,
                 ),
                 child: Column(
                   children: [
-                    Container(
-                      child: Icon(Icons.back_hand_rounded),
-                    ),
+                    Icon(Icons.back_hand_rounded),
                     Text(
                       "PONTIAC TEMPEST",
                       style: HeaderFonts.primaryText,
                     ),
-                    Padding(
-                      padding: EdgeInsets.only(left: 50, right: 50),
+                    Container(
+                      constraints: BoxConstraints(
+                          maxWidth: MediaQuery.of(context).size.width / 1.2),
                       child: Text(
                         " GTO had poor aerodynamics, poor handling.drum brakes without booster in the basic configuration",
                         style: TextStyle(
@@ -74,33 +71,33 @@ class SecondApp extends StatelessWidget {
                       height: MediaQuery.of(context).size.height / 5,
                       decoration: BoxDecoration(
                           color: AppColor.teritaryColor,
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(20),
-                            topRight: Radius.circular(20),
-                          )),
-                      child: Row(children: [
-                        Padding(
-                          padding: EdgeInsets.only(left: 28, bottom: 120),
-                          child: Text(
-                            "Price",
-                            style: TextStyle(
-                              fontSize: 25,
-                              color: TextColor.primaryColor,
+                          borderRadius: BoxBorders.primaryBoxBorders),
+                      child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Align(
+                              alignment: Alignment.topLeft,
+                              child: Text(
+                                "Price",
+                                style: TextStyle(
+                                  fontSize: 25,
+                                  color: TextColor.primaryColor,
+                                ),
+                              ),
                             ),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(left: 170, bottom: 120),
-                          child: Text(
-                            "875000\$",
-                            style: TextStyle(
-                              fontSize: 30,
-                              color: TextColor.primaryColor,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        )
-                      ]),
+                            Align(
+                              alignment: Alignment.topRight,
+                              child: Text(
+                                "875000\$",
+                                style: TextStyle(
+                                  fontSize: 30,
+                                  color: TextColor.primaryColor,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            )
+                          ]),
                     ),
                   ],
                 ),
@@ -109,41 +106,25 @@ class SecondApp extends StatelessWidget {
             bottom: 0,
             child: Container(
               width: MediaQuery.of(context).size.width,
-              height: 140,
+              height: MediaQuery.of(context).size.height / 6,
               decoration: BoxDecoration(
                   color: AppColor.primaryColor,
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(20),
-                    topRight: Radius.circular(20),
-                  )),
-            ),
-          ),
-          Positioned(
-            bottom: 36,
-            child: Container(
-              width: MediaQuery.of(context).size.width,
-              height: 70,
-              decoration: BoxDecoration(
-                  color: AppColor.teritaryColor,
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(25),
-                    topRight: Radius.circular(25),
-                    bottomLeft: Radius.circular(25),
-                    bottomRight: Radius.circular(25),
-                  )),
-              child: OutlinedButton(
-                  style: OutlinedButton.styleFrom(
-                      backgroundColor: AppColor.teritaryColor),
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  child: Padding(
-                    padding: EdgeInsets.only(
-                        left: 0, right: 20, top: 15, bottom: 18),
+                  borderRadius: BoxBorders.primaryBoxBorders),
+              child: Container(
+                margin: EdgeInsets.symmetric(horizontal: 60, vertical: 30),
+                decoration: BoxDecoration(
+                    color: AppColor.teritaryColor,
+                    borderRadius: BoxBorders.secondaryBoxBorders),
+                child: OutlinedButton(
+                    style: OutlinedButton.styleFrom(
+                        backgroundColor: AppColor.teritaryColor),
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
                     child: Text("BUY",
                         style: TextStyle(
-                            color: TextColor.primaryColor, fontSize: 30)),
-                  )),
+                            color: TextColor.primaryColor, fontSize: 30))),
+              ),
             ),
           ),
         ]));

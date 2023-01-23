@@ -16,7 +16,7 @@ class SmallBox extends StatelessWidget {
       // padding: EdgeInsets.all(8.0),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
-          color: Color.fromARGB(255, 65, 66, 65)),
+          color: TextColor.teritaryColor),
 
       child: Column(
         children: [
@@ -38,34 +38,32 @@ class SmallBox extends StatelessWidget {
               ),
             ),
           ),
-          Container(
-            child: Row(
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(left: 12, bottom: 4),
-                  child: Text(
-                    tex2,
-                    style: TextStyle(
-                      fontSize: 23,
-                      color: TextColor.secondaryColor,
-                      fontWeight: FontWeight.bold,
-                    ),
+          Row(
+            children: [
+              Padding(
+                padding: EdgeInsets.only(left: 12, bottom: 4),
+                child: Text(
+                  tex2,
+                  style: TextStyle(
+                    fontSize: 23,
+                    color: TextColor.secondaryColor,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
-                Padding(
-                  padding: EdgeInsets.only(left: 5),
-                  child: Text(
-                    tex3,
-                    style: TextStyle(
-                      fontSize: 12,
-                      color: TextColor.secondaryColor,
-                      fontWeight: FontWeight.bold,
-                    ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: 5),
+                child: Text(
+                  tex3,
+                  style: TextStyle(
+                    fontSize: 12,
+                    color: TextColor.secondaryColor,
+                    fontWeight: FontWeight.bold,
                   ),
-                )
-              ],
-            ),
-          )
+                ),
+              )
+            ],
+          ),
         ],
       ),
     );
